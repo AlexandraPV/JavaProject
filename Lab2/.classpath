@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="src" path="antlr4"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8">
+		<attributes>
+			<attribute name="owner.project.facets" value="java"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="/Users/Alisandra/Downloads/antlr-4.7-complete.jar" sourcepath=".settings"/>
+	<classpathentry kind="lib" path="/Users/Alisandra/Downloads/Jama-1.0.3.jar"/>
+	<classpathentry kind="lib" path="/Users/Alisandra/Downloads/antlr-runtime-4.7.jar"/>
+	<classpathentry kind="lib" path="/Users/Alisandra/Downloads/junit-4.10.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
