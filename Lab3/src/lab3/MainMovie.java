@@ -26,8 +26,6 @@ public class MainMovie {
 		
 		clearOldNews(news);
 		int count = news.count();
-		
-		//System.out.println("\nAll news: " + count );
 		System.out.println("Deleted: "+ (after - count) + "\n");
 		
 		
@@ -55,21 +53,16 @@ public class MainMovie {
 	
 	private static void deserialization(Movie news) {
 		boolean isError = false;
-		//System.out.print("Deserialization: ");
 		try {
 			news.deserialize();
 		} catch (Exception e) {
-			//isError = true;
 			System.out.println("ERROR deserialization");
 			
 		}
-		//printErrorStatus(isError);
 		
 	}
 	
 	private static void parsing(Movie news) {
-		//boolean isError = false;
-		//System.out.println("Parsing:");
 		try {
 			File file = new File("src/web.txt");
 			file.createNewFile();
@@ -80,13 +73,7 @@ public class MainMovie {
 			while ((link = reader.readLine()) != null) {
 				System.out.print(link);
 				int count = news.count();
-				
 				news.parse(link);
-				
-				/*for (int i = 0; i < 75 - link.length(); i++) {
-					System.out.print("-");
-				}
-				System.out.println(" " + (news.count() - count));*/
 				System.out.println("");
 			}
 			System.out.println("");
@@ -101,39 +88,20 @@ public class MainMovie {
 	}
 	
 	private static void clearOldNews(Movie news) {
-		//boolean isError = false;
-		//System.out.print("Clear old news: ");
 		try {
 			news.clean();
 		} catch (Exception e) {
-			//isError = true;
 			System.out.println("ERROR clean");
 		}
-		//printErrorStatus(isError);
-		//System.out.println("Don`t clean");
 	}
 	
 	private static void serialization(Movie news) {
-		//boolean isError = false;
-		//System.out.print("Serialization: ");
 		try {
 			news.serialize();
 		} catch (Exception e) {
-			//isError = true;
 			System.out.println("Not update");
 		}
-		//printErrorStatus(isError);
-		//System.out.println("Not update");
 	}
-	
-	/*private static void printErrorStatus(boolean isError) {
-		if (isError) {
-			System.out.println("Not successfully completed!");
-		}
-		else {
-			System.out.println("Successfully completed!");
-		}
-	}*/
 	
 	
 	private static String getCommand(Scanner console) {
