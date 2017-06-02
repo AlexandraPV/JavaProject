@@ -156,7 +156,7 @@ class Movie {
 			int count = map.get(key);
 
 			if (count > 0) {
-				System.out.println("Count(" + phrase + "): " + count);
+				System.out.println("Count phrase: " + count);
 				key.printAllInfo();
 			}
 			if (i == limit) break;

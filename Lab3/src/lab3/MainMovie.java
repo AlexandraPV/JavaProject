@@ -1,4 +1,6 @@
 package lab3;
+import static org.mockito.Mockito.mock;
+
 import java.io.File;
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -52,7 +54,6 @@ public class MainMovie {
 
 	
 	private static void deserialization(Movie news) {
-		boolean isError = false;
 		try {
 			news.deserialize();
 		} catch (Exception e) {
@@ -80,11 +81,8 @@ public class MainMovie {
 	        reader.close();
 		}
 		catch (Exception e) {
-			//isError = true;
 			System.out.println("ERROR parsing");
 		}
-		//printErrorStatus(isError);
-		//System.out.println("ERROR parsing");
 	}
 	
 	private static void clearOldNews(Movie news) {

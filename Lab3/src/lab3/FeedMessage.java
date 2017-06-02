@@ -31,6 +31,13 @@ class FeedMessage implements Serializable {
 	public String description;
 	public String pubDate;
 	
+	public void printAllInfo() {
+		System.out.println("Title:   " + title);
+		System.out.println("Description:   " + description);
+		System.out.println("PubDate:   " + pubDate);
+		System.out.println();
+	 }
+	
 	public int getIndex(String phrase) {
 		return countWords(title, phrase) + countWords(description, phrase);
 	}
@@ -107,28 +114,20 @@ class FeedMessage implements Serializable {
 	}
 	
 	
-	public boolean isNotNew(int maxCountDays) throws ParseException { 
+	public boolean isNotNew(int DaysCount) throws ParseException { 
 		SimpleDateFormat format = new SimpleDateFormat("EEE, dd MMM yyyy hh:mm:ss", java.util.Locale.ENGLISH);
 		format.setTimeZone(TimeZone.getTimeZone("EEST"));
 		
-	
 		Date date = format.parse(pubDate);
 		Date now = new Date();
 		
 		long diffTime = now.getTime() - date.getTime();
 		int countDays = (int) TimeUnit.DAYS.convert(diffTime, TimeUnit.MILLISECONDS);
 		
-		if (countDays >= maxCountDays) {
+		if (countDays >= DaysCount) {
 			return true;
 		}
 		return false;
 	}
-	
-	
-	public void printAllInfo() {
-		System.out.println("Title:   " + title);
-		System.out.println("Description:   " + description);
-		System.out.println("PubDate:   " + pubDate);
-		System.out.println();
-	 }
+		
   }
